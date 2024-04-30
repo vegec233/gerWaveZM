@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="3DTutorialStyle.css">
+    <link rel="stylesheet" href="Style.css">
+    <title>3Dwave</title>
+</head>
+<body>
+    <div id="scene-container">
+        <canvas id="canvas"></canvas>  
+    </div>
+
+    <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="2DTutorial.html">2D Waves</a></li>
+          <li><a href="3DTutorial.html">3D Waves</a></li>
+          <li><a href="Scene.html">Simulations</a></li>
+          <li><a href="form.html">Rating</a></li>
+        </ul>
+         
+      </nav>
+    <div id="container">
+        <div id="text-container">
+            <h1>Gerstner Wave in 3D</h1>
+            <p>Hopefully you are famaliar with the 2D wave motions now. If not, please check the 2D wave motion tutorial page.</p>
+            <p>In a 3D scene, everything works similar in 2D except there is another axis. In this case, Y-axis points upward, 
+                x points to the right and Z-axis points to the viewer. By implementing the gerstner wave in 3D world,
+               we also need another vector to work as the direction of wave. For example, we create a 2D vector called "D", and
+               D = (Dx, Dz). Each component represents the weight of effectiveness in x and z directions. </p>
+        
+        
+            <p>Hence, we can get each vertex's coordinates by the following:</p>
+            <p>X-Coordinate = x + Σ Amplitude * Dx * cos ( ( 2 * Pi / l ) * D · (x, z) + waveTime * waveSpd )</p>
+            <p>Z-Coordinate = z + Σ Amplitude * Dz * cos ( ( 2 * Pi / l ) * D · (x, z) + waveTime * waveSpd)</p>
+            <p>Y-Coordinate = Σ Amplitude * sin ( ( 2 * Pi / l )  * D · (x, y) + waveTime * waveSpd)</p>
+
+            <p>Now we have the vertex motion. The next step is to find out the normal for light calculations. By finding the partial 
+                derivative of vertex's three dimensional coordinates with respect to the direction of x and z axis will produce the 
+                tangent and bitangent on each vertex. Then find the cross product between them to get the normal.  
+            </p>
+            <p>Tangent:</p>
+            <p>1.0 - Σ Amplitude * Dx ^ 2 * sin( D · (x, z)  * ( 2 * Pi / l )  + waveTime * waveSpd )</p>
+            <p>- Σ Amplitude * sin( D · (x, z) * ( 2 * Pi / l ) + waveTime * waveSpd) * Dz * Dx</p>
+            <p>Σ Amplitude * cos(D · (x, z) * ( 2 * Pi / l ) + waveTime * waveSpd) * Dx</p>
+            <p>BiTangent:</p>
+            <p>- Σ Amplitude * Dx *Dz * sin( D · (x, z)  * ( 2 * Pi / l )  + waveTime * waveSpd )</p>
+            <p>1.0 - Σ Amplitude * sin( D · (x, z) * ( 2 * Pi / l ) + waveTime * waveSpd) * Dz ^ 2</p>
+            <p>Σ Amplitude * cos(D · (x, z) * ( 2 * Pi / l ) + waveTime * waveSpd) * Dz</p>
+            <p>Normal = Cross product of Tangent and BiTangent</p>
+            <p>Once we have normal, we can add diffuse and highlight to the sea surface by Lambert and Phong. </p>
+        </div>
+ 
+    <div id="scene-container1">
+        <canvas id="canvas1"></canvas>
+        <div id="gui-container"></div>
+    </div>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./three.module.js"
+            }
+        }
+    </script>
+    <script src="background.js" type="module"></script>
+    <script src = "directionScene.js" type="module"></script>
+
+</body>
+</html>

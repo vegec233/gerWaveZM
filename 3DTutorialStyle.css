@@ -1,0 +1,27 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  #text-container {
+    flex: 1;
+    padding: 20px;
+    color: rgba(255,255,255,1);
+    font-size: 1.4rem;
+  }
+  
+  #scene-container1 {
+    flex: 1;
+  }
+  
+  body{
+    margin: 0%;
+  }
+
+  #gui-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+  }
+ 

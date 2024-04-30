@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Simulation</title>
+    <link rel="stylesheet" href="SceneStyle.css">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div id="scene-container">
+        <canvas id="canvas"></canvas>  
+    </div>
+    <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="2DTutorial.html">2D Waves</a></li>
+          <li><a href="3DTutorial.html">3D Waves</a></li>
+          <li><a href="Scene.html">Simulations</a></li>
+          <li><a href="form.html">Rating</a></li>
+        </ul>
+         
+      </nav>
+    <div id="container">
+        <div id="text-container">
+            <h1>Welcome to the sea wave simulation scene</h1>
+            <h2>Interactions</h2>
+            <ul>
+                <li>Wave Frequency</li>
+                <li>Wave Speed</li>
+                <li>Wave Steepness</li>
+                <li>Wave Period</li>
+                <li>Light Position</li>
+            </ul>
+            <h2>Features</h2>
+            <ul>
+                <li>Adjustable gerstner wave motion</li>
+                <li>Transparent geometry</li>
+                <li>Caustics</li>
+            </ul>
+            <h2>Reminder</h2>
+            <p> The shape of the wave looks abnormal when you increase the steepness?
+                This is due to the nature of Gerstner Wave. You can try to reduce the Frequency Index
+                or change Period to make the shape of the wave normal again.
+             </p>
+        </div>
+        <div id="scene-container1">
+            <canvas id="canvas1"></canvas>
+        </div>
+    </div>
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./three.module.js"
+            }
+        }
+    </script>
+    <script src="background.js" type="module"></script>
+    <script src = "seaScene.js" type="module"></script>
+</body>
+</html>
+
+ 

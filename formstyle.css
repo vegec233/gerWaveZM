@@ -1,0 +1,68 @@
+/* 
+Star rating refers to Digitalfox Tutorials 
+Author: Digital Fox
+Location: https://digitalfox-tutorials.com/tutorial.php?title=Creating-the-front-end-of-a-rating-system-with-css-and-javascript
+Accessed:01/04/2023
+ */
+
+.ratings-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+ 
+.ratings{
+    display: flex;
+    flex: 1;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;   
+}
+ 
+.ratings span{
+    cursor: pointer;
+    transition: color .2s;
+    font-size: 50px;
+}
+ 
+.ratings span:hover{
+    color: orange;
+}
+ 
+.ratings span:hover ~ span{
+    color: orange;
+}
+ 
+.ratings span[data-clicked]{
+    color: orange;
+}
+ 
+.ratings span[data-clicked] ~ span{
+    color: orange;
+}
+  
+  h1 {
+    text-align: center;
+    flex: 1;
+    color: rgba(255,255,255, 1);
+  }
+
+  body {
+    position: relative;
+    margin: 0%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin: 20px;
+    color: rgba(255, 255, 255, 1); 
+    font-size: 1.5rem;
+  }
+  
+  table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 1);
+  }

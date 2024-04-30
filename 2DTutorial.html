@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D waves</title>
+    <link rel="stylesheet" href="2DTutorialStyle.css">
+    <link rel="stylesheet" href="Style.css">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+</head>
+<body>
+  <div id="scene-container">
+    <canvas id="canvas"></canvas>  
+  </div>
+
+  <nav class="nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="2DTutorial.html">2D Waves</a></li>
+      <li><a href="3DTutorial.html">3D Waves</a></li>
+      <li><a href="Scene.html">Simulations</a></li>
+      <li><a href="form.html">Rating</a></li>
+    </ul>
+     
+  </nav>
+  
+  
+  <div class="container">
+    <div id="singleSine">
+      <div id="texts"> 
+        <h2>Single Sine Wave</h2>
+        <p>A sine wave, sinusoidal wave, or just sinusoid is a mathematical curve defined in 
+           terms of the sine trigonometric function, of which it is the graph. It is a type 
+           of continuous wave and also a smooth periodic function. It occurs often in mathematics, 
+           as well as in physics, engineering, signal processing and many other fields.</p>
+        <p>This type of wave is periodic and smooth. Hence, it is a good choice to simulate calm and
+           regular liquid surface motion, for example, a well water surface ripple.</p>
+        <p>y = Amplitude * sin( x )</p>
+      </div>
+      <div id="sliderContainer">
+        <label>Amplitude:</label>
+      </div>
+      <div id="sketchContainer"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="multiSine">
+      <div id="texts1"> 
+        <h2>Sum of Sine Waves</h2>
+        <p>By summing up multiple sine waves with different frequency, wave length or amplitude, 
+           a more random motion can be created. This is desirable for simulating a lake or stream 
+           surface. However, it is still not good enough for a sea surface.
+        </p>
+        <p>This sketch below shows a sum of 4 sine waves.</p>
+      </div>
+      <div id="sliderContainer1">
+        <label>Amplitude:</label>
+      </div>
+      <div id="sketchContainer1"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="singleGerstner">
+      <div id="texts2"> 
+        <h2>Single Gerstner Wave</h2>
+        <p>Similar to sine wave but points on gerstner wave is moving around circles instead of straight up 
+          and down oscillation. As a circle can be drawn through (cos(x),sin(x)), while x is increasing.
+          This creats a steep crest and a smooth trough. Now this looks more like a sea wave.</p>
+        <p>However, when the wave amplitude is too high, the shape of the wave will become abnormal. Hence, be
+          careful with the value of amplitude when using it.
+        </p>
+        <p>X-Coordinate = Amplitude * cos ( (2 * Pi / waveLength) * (Offset) )</p>
+        <p>Y-Coordinate = Amplitude * sin ( (2 * Pi / waveLength) * (Offset) )</p>
+      </div>
+      <div id="sliderContainer2">
+        <label>Amplitude:</label>
+      </div>
+      <div id="sketchContainer2"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="multiGerstner">
+      <div id="texts3"> 
+        <h2>Sum of Gerstner Waves</h2>
+        <p>Similar to sine wave examples above, by adding up different gerstner waves can create a random wave motion.
+           Now it is an ideal wave motion for a sea surface simulation! However, the abnormal shape of the wave will stil 
+           occur when the amplitudes goes to high. Do be careful with these parameters. But luckily, when you need to increase
+           the amplitude is too high, you can fix its shape by adjusting the frquency and period of the wave. You will get to try 
+           it in the 3D simulation scene in this site.
+        </p>
+        <p>The sketch below shows a sum of 4 different Gerstner waves.</p>
+      </div>
+      <div id="sliderContainer3">
+        <label>Amplitude:</label>
+      </div>
+      <div id="sketchContainer3"></div>
+    </div>
+  </div>
+
+  <script type="importmap">
+    {
+        "imports": {
+            "three": "./three.module.js"
+        }
+    }
+  </script>
+  <script src="background.js" type="module"></script>
+  <script src="tutorialP1.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+}
+
+#singleSine, #multiSine, #singleGerstner, #multiGerstner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: rgba(255,255,255,1);
+}
+
+#sliderContainer, #sketchContainer, #sliderContainer1, #sketchContainer1, #sliderContainer2, #sketchContainer2, #sliderContainer3, #sketchContainer3 {
+  margin: 0;
+}
+
+#sliderContainer label, #sliderContainer1 label, #sliderContainer2 label, #sliderContainer3 label {
+  display: block;
+}
+
+body{
+  margin: 0%;
+} 
+ 
